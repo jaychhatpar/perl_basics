@@ -61,6 +61,15 @@ print "$str\n";
 $str = "\QWelcome to tutorialspoint's family";
 print "$str\n";
 
+# Adding inverted commas in comments.
+$str = "Welcome to \"tutorialspoint's family\"";
+print "$str\n";
+
+# Adding alert bell
+$str = "Welcome to Beep Factory!!!\a";
+print "$str\n";
+
+
 =begin comment
 Welcome to
 tutorialspoint.com!
@@ -69,4 +78,5 @@ Welcome to tutorialspoint.com!
 WELCOME TO TUTORIALSPOINT.COM!
 Welcome to TUTORIALSPOINT.com!
 Welcome\ to\ tutorialspoint\'s\ family
+Welcome to Beep Factory!!!
 =cut
