@@ -325,6 +325,126 @@ print "5. \@coins  = @coins\n";
 4. @coins  = Dollar Quarter Dime Nickel
 5. @coins  = Quarter Dime Nickel
 =cut
+
+#Slicing Array Elements
+@days = qw/Mon Tue Wed Thu Fri Sat Sun/;
+
+@weekdays = @days[3,4,5];
+print "@weekdays\n";
+
+@days = qw/Mon Tue Wed Thu Fri Sat Sun/;
+@weekdays = @days[3..5];
+print "@weekdays\n";
+=begin comment
+Thu Fri Sat
+Thu Fri Sat
+=cut
+
+#Splice (Replacing) Array Elements - splice @ARRAY, OFFSET [ , LENGTH [ , LIST ] ]
+@nums = (1..20);
+print "Before - @nums\n"; 
+splice(@nums, 5, 5, 21..25); 
+print "After - @nums\n";
+
+=begin comment
+Before - 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+After - 1 2 3 4 5 21 22 23 24 25 11 12 13 14 15 16 17 18 19 20
+=cut
+
+
+# define Strings
+$var_string = "Rain-Drops-On-Roses-And-Whiskers-On-Kittens";
+$var_names = "Larry,David,Roger,Ken,Michael,Tom";
+
+# transform above strings into arrays.
+@string = split('-', $var_string);
+@names  = split(',', $var_names);
+
+print "$string[3]\n";  # This will print Roses
+print "$names[4]\n";   # This will print Michael
+
+=begin comment
+Roses
+Michael
+=cut
+
+#Transform Arrays to Strings - join EXPR, LIST
+
+
+# define Strings
+$var_string = "Rain-Drops-On-Roses-And-Whiskers-On-Kittens";
+$var_names = "Larry,David,Roger,Ken,Michael,Tom";
+
+# transform above strings into arrays.
+@string = split('-', $var_string);
+@names  = split(',', $var_names);
+
+$string1 = join( '-', @string );
+$string2 = join( ',', @names );
+
+print "$string1\n";
+print "$string2\n";
+
+=begin comment
+Rain-Drops-On-Roses-And-Whiskers-On-Kittens
+Larry,David,Roger,Ken,Michael,Tom
+=cut
+
+#Sorting Arrays - sort [ SUBROUTINE ] LIST
+#Please note that sorting is performed based on ASCII Numeric value of the words. So the best option is to first transform every element of the array into lowercase letters and then perform the sort function.
+@foods = qw(pizza steak chicken burgers);
+print "Before: @foods\n";
+
+# sort this array
+@foods = sort(@foods);
+print "After: @foods\n";
+
+=begin comment
+Before: pizza steak chicken burgers
+After: burgers chicken pizza steak
+=cut
+
+#The $[ Special Variable - We have a special variable, which is written as $[. This special variable is a scalar containing the first index of all arrays. Because Perl arrays have zero-based indexing, 
+#$[ will almost always be 0. But if you set $[ to 1 then all your arrays will use one-based indexing. It is recommended not to use any other indexing other than zero. However, let's take one example to show the usage of $[ variable −
+
+# define an array
+@foods = qw(pizza steak chicken burgers);
+print "Foods: @foods\n";
+
+# Let's reset first index of all the arrays.
+$[ = 1;
+
+print "Food at \@foods[1]: $foods[1]\n";
+print "Food at \@foods[2]: $foods[2]\n";
+
+=begin comment
+Foods: pizza steak chicken burgers
+Food at @foods[1]: pizza
+Food at @foods[2]: steak
+=cut
+
+#Merging Arrays
+@numbers = (1,3,(4,5,6));
+print "numbers = @numbers\n";
+#numbers = 1 3 4 5 6
+
+@odd = (1,3,5);
+@even = (2, 4, 6);
+@numbers = (@odd, @even);
+print "numbers = @numbers\n";
+
+#numbers = 1 3 5 2 4 6
+
+#Selecting Elements from Lists
+
+$var = (5,4,3,2,1)[4];
+print "value of var = $var\n"
+#Value of var = 1
+
+@list = (5,4,3,2,1)[1..3];
+print "Value of list = @list\n";
+#Value of list = 4 3 2
+
 ############################ Hashes ############################ 
 my %days; #hashes are key value pairs
 %days = (1,"Mon",3,"Wed",2,"Tues",4,"Thu");
@@ -395,3 +515,4 @@ After deleting two keys.
 6Saturday
 7Sunday
 =cut
+
