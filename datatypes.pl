@@ -69,6 +69,40 @@ print "$str\n";
 $str = "Welcome to Beep Factory!!!\a";
 print "$str\n";
 
+#Scalar Variables
+$age = 25;             # An integer assignment
+$name = "John Paul";   # A string 
+$salary = 1445.50;     # A floating point
+
+print "Age = $age\n";
+print "Name = $name\n";
+print "Salary = $salary\n";
+
+#Array variables
+print"Array variables\n";
+@ages = (25, 30, 40);             
+@names = ("John Paul", "Lisa", "Kumar");
+print "\$ages[0] = $ages[0]\n";
+print "\$ages[1] = $ages[1]\n";
+print "\$ages[2] = $ages[2]\n";
+print "\$names[0] = $names[0]\n";
+print "\$names[1] = $names[1]\n";
+print "\$names[2] = $names[2]\n";
+
+#Hash variables
+print"Hash variables\n";
+%data = ('John Paul', 45, 'Lisa', 30, 'Kumar', 40);
+print "\$data{'John Paul'} = $data{'John Paul'}\n";
+print "\$data{'Lisa'} = $data{'Lisa'}\n";
+print "\$data{'Kumar'} = $data{'Kumar'}\n";
+
+#Variable Context
+print"Variable Context\n";
+@names = ('John Paul', 'Lisa', 'Kumar');
+@copy = @names;
+$size = @names;
+print "Given names are : @copy\n";
+print "Number of names are : $size\n";
 
 =begin comment
 Welcome to
@@ -79,4 +113,22 @@ WELCOME TO TUTORIALSPOINT.COM!
 Welcome to TUTORIALSPOINT.com!
 Welcome\ to\ tutorialspoint\'s\ family
 Welcome to Beep Factory!!!
+Age = 25
+Name = John Paul
+Salary = 1445.5
+Array variables
+$ages[0] = 25
+$ages[1] = 30
+$ages[2] = 40
+$names[0] = John Paul
+$names[1] = Lisa
+$names[2] = Kumar
+Hash variables
+$data{'John Paul'} = 45
+$data{'Lisa'} = 30
+$data{'Kumar'} = 40
+Variable Context
+Given names are : John Pa
+Number of names are : 3
+
 =cut
