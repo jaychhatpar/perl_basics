@@ -104,6 +104,31 @@ $size = @names;
 print "Given names are : @copy\n";
 print "Number of names are : $size\n";
 
+#V-Strings
+=begin comment
+A literal of the form v1.20.300.4000 is parsed as a string composed of characters with the specified ordinals. This form is known as v-strings.
+
+A v-string provides an alternative and more readable way to construct strings, rather than use the somewhat less readable interpolation form "\x{1}\x{14}\x{12c}\x{fa0}".
+=cut
+$smile  = v9786;
+$foo    = v102.111.111;
+$martin = v77.97.114.116.105.110; 
+
+print "smile = $smile\n";
+print "foo = $foo\n";
+print "martin = $martin\n";
+
+#Special Literals
+=begin comment
+So far you must have a feeling about string scalars and its concatenation and interpolation opration. So let me tell you about three special literals __FILE__, __LINE__, and __PACKAGE__ represent the current filename, line number, and package name at that point in your program.
+=cut
+print "File name ". __FILE__ . "\n";
+print "Line Number " . __LINE__ ."\n";
+print "Package " . __PACKAGE__ ."\n";
+
+# they can not be interpolated
+print "__FILE__ __LINE__ __PACKAGE__\n";
+
 =begin comment
 Welcome to
 tutorialspoint.com!
@@ -130,5 +155,14 @@ $data{'Kumar'} = 40
 Variable Context
 Given names are : John Pa
 Number of names are : 3
+Wide character in print at C:\Users\win\Desktop\Jayesh\perl\datatypes.pl line 11
+7.
+smile = Γÿ║
+foo = foo
+martin = Martin
+File name C:\Users\win\Desktop\Jayesh\perl\datatypes.pl
+Line Number 126
+Package main
+__FILE__ __LINE__ __PACKAGE__
 
 =cut
